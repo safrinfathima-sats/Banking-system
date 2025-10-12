@@ -70,16 +70,16 @@ int main() {
                     history.push_back(entry);
                     appendToFile(logfile, entry);
 
-                    cout << "✅ Deposit successful! Current Balance = " << formatAmount(balance) << endl;
+                    cout << " Deposit successful! Current Balance = " << formatAmount(balance) << endl;
 
                     // Motivational message
                     if (amount >= 5000) {
-                        cout << "🌟 Wow! You're saving a big amount. Keep it up!" << endl;
+                        cout << " Wow! You're saving a big amount. Keep it up!" << endl;
                     } else {
-                        cout << "💡 Great job saving your money! Every bit counts." << endl;
+                        cout << "Great job saving your money! Every bit counts." << endl;
                     }
                 } else {
-                    cout << "❌ Invalid deposit amount! Must be > 0." << endl;
+                    cout << " Invalid deposit amount! Must be > 0." << endl;
                 }
                 break;
             }
@@ -89,14 +89,14 @@ int main() {
                 if (!(cin >> amount)) {
                     cin.clear();
                     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                    cout << "❌ Invalid amount entered." << endl;
+                    cout << " Invalid amount entered." << endl;
                     break;
                 }
 
                 if (amount > 0 && amount <= balance) {
                     // Warning if withdrawal >= 50% of balance BEFORE withdrawal
                     if (amount >= balance * 0.5) {
-                        cout << "⚠️ Warning: You are withdrawing " << formatAmount(amount)
+                        cout << " Warning: You are withdrawing " << formatAmount(amount)
                              << " which is >= 50% of your current balance (" << formatAmount(balance) << ")." << endl;
                         cout << "Consider keeping a safety buffer for emergencies." << endl;
                     }
@@ -106,15 +106,15 @@ int main() {
                     history.push_back(entry);
                     appendToFile(logfile, entry);
 
-                    cout << "✅ Withdrawal successful! Current Balance = " << formatAmount(balance) << endl;
+                    cout << " Withdrawal successful! Current Balance = " << formatAmount(balance) << endl;
                 } else {
-                    cout << "❌ Insufficient balance or invalid amount!" << endl;
+                    cout << " Insufficient balance or invalid amount!" << endl;
                 }
                 break;
             }
 
             case 3:
-                cout << "💰 Your current balance is: " << formatAmount(balance) << endl;
+                cout << " Your current balance is: " << formatAmount(balance) << endl;
                 break;
 
             case 4: {
@@ -143,11 +143,11 @@ int main() {
             }
 
             case 5:
-                cout << "👋 Thank you for using Smart Banking System. Goodbye!" << endl;
+                cout << " Thank you for using Smart Banking System. Goodbye!" << endl;
                 break;
 
             default:
-                cout << "❌ Invalid choice! Please try again (1-5)." << endl;
+                cout << " Invalid choice! Please try again (1-5)." << endl;
         }
     } while (choice != 5);
 
